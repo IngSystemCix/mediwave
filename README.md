@@ -1,3 +1,5 @@
+![banner-mediwave](./public/mediwave-banner.png)
+
 ### 📜 **Project Overview**  
 **MediWave** is a modern healthcare application designed to streamline medical record management, appointment scheduling, and patient monitoring. Built with **Angular**, it provides an intuitive and responsive user interface, ensuring a seamless experience for both patients and healthcare professionals.  
 
