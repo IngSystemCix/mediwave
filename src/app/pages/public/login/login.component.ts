@@ -1,4 +1,4 @@
-import { type AfterViewInit, ChangeDetectionStrategy, Component } from '@angular/core';
+import { type AfterViewInit, ChangeDetectionStrategy, Component, type OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormBuilder, type FormGroup } from '@angular/forms';
 import { Inject } from '@angular/core';
@@ -19,7 +19,7 @@ interface LoginFormProps {
   styleUrl: './login.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent implements AfterViewInit {
+export class LoginComponent implements AfterViewInit, OnInit {
   protected loginForm: FormGroup<LoginFormProps>;
 
   constructor(@Inject(FormBuilder) private fb: FormBuilder) {
@@ -54,6 +54,9 @@ export class LoginComponent implements AfterViewInit {
       { updateOn: 'change' }
     );
   }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   onSubmit() {
     if (this.loginForm.valid) {
@@ -67,4 +70,13 @@ export class LoginComponent implements AfterViewInit {
     togglePassword.autoInit();
   }
 
+  dniInput(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    input.value = input.value.replace(/[^0-9]/g, '');
+  }
+
+  digitVerificationInput(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    input.value = input.value.replace(/[^0-9]/g, '');
+  }
 }
