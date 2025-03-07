@@ -6,3 +6,16 @@
 .dark input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
+
+.loader-overlay {
+  @apply fixed inset-0 bg-white dark:bg-gray-900 flex flex-col space-y-4
+         items-center justify-center z-50 transition-opacity duration-700;
+}
+
+.loader-hidden {
+  @apply opacity-0 pointer-events-none;
+}
+
+.loader-icon {
+  @apply text-5xl text-cyan-500 dark:text-cyan-300;
+}
